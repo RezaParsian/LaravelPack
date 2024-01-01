@@ -1,0 +1,32 @@
+{
+  "name": "rp76/laravelpack",
+  "version": "0.1",
+  "description": "This package bunch of necessary item for laravel",
+  "type": "library",
+  "homepage": "https://github.com/RezaParsian/Guzzle",
+  "license": "MIT",
+  "keywords": [
+    "api",
+    "response"
+  ],
+  "readme": "README.md",
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rp76\\LaravelPack\\": "src/"
+    },
+    "files": [
+      "src/functions.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "RezaParsian",
+      "email": "rezaparsian76@gmail.com",
+      "homepage": "https://rp76.ir"
+    }
+  ],
+  "minimum-stability": "dev"
+}
