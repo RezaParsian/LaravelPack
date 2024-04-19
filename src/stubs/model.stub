@@ -1,0 +1,26 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Rp76\LaravelPack\Traits\PipeAble;
+
+class {{ class }} extends Model
+{
+    use HasFactory,PipeAble;
+
+    const ID = "id",
+
+        CREATED_AT = "created_at",
+        UPDATED_AT = "updated_at";
+
+    protected $fillable = [
+
+    ];
+
+    public function getMorphClass(): string
+    {
+        return class_basename(self::class);
+    }
+}
