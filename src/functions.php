@@ -2,12 +2,25 @@
 
 use Illuminate\Support\Facades\Response;
 
-function success($data, string $message = "info.received_successfully", int $status = 200, array $headers = [])
+/**
+ * @param $data
+ * @param int $status
+ * @param string $message
+ * @param array $headers
+ * @return mixed
+ */
+function success($data, int $status = 200, string $message = "info.received_successfully", array $headers = [])
 {
     return Response::success($data, __($message), $status, $headers);
 }
 
-function error(string $message, ?array $errors, int $status)
+/**
+ * @param string $message
+ * @param int $status
+ * @param array|null $errors
+ * @return mixed
+ */
+function error(string $message, int $status, ?array $errors)
 {
     return Response::error(__($message), $errors, $status);
 }
