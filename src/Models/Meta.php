@@ -16,8 +16,7 @@ class Meta extends Model
 
     const
         KEY = "key",
-        VALUE = "value",
-        METABLE_TYPE = "metable_type";
+        VALUE = "value";
 
     protected $fillable = [
         self::KEY,

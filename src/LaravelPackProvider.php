@@ -47,6 +47,10 @@ class LaravelPackProvider extends ServiceProvider
             __DIR__ . '/migrations' => database_path('migrations'),
         ]);
 
+        $this->publishes([
+            __DIR__ . '/stubs' => base_path('stubs'),
+        ]);
+
         Model::preventLazyLoading();
         JsonResource::withoutWrapping();
     }

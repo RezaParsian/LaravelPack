@@ -1,0 +1,32 @@
+
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Support\Str;
+
+class {{ class }}
+{
+    use Dispatchable;
+
+    /**
+     * Create a new job instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->onQueue(Str::kebab(class_basename(self::class)));
+    }
+
+    /**
+     * Execute the job.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        //
+    }
+}
