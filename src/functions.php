@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Response;
  * @param int $status
  * @param string $message
  * @param array $headers
- * @return mixed
+ * @return object
  */
-function success($data, int $status = 200, string $message = "info.received_successfully", array $headers = [])
+function success($data, int $status = 200, string $message = "info.received_successfully", array $headers = []): object
 {
     return Response::success($data, __($message), $status, $headers);
 }
@@ -20,9 +20,9 @@ function success($data, int $status = 200, string $message = "info.received_succ
  * @param string $message
  * @param int $status
  * @param array|null $errors
- * @return mixed
+ * @return object
  */
-function error(string $message, int $status, ?array $errors)
+function error(string $message, int $status, ?array $errors): object
 {
     return Response::error(__($message), $errors, $status);
 }
