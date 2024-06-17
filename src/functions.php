@@ -4,6 +4,17 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
 
+function faToEn($string): array|string
+{
+    $persian = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+    $arabic = ['٩', '٨', '٧', '٦', '٥', '٤', '٣', '٢', '١', '٠'];
+
+    $num = range(0, 9);
+    $convertedPersianNums = str_replace($persian, $num, $string);
+
+    return str_replace($arabic, $num, $convertedPersianNums);
+}
+
 /**
  * @param $data
  * @param int $status
