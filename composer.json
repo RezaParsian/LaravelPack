@@ -1,6 +1,6 @@
 {
   "name": "rp76/laravelpack",
-  "version": "0.6",
+  "version": "0.7",
   "description": "This package bunch of necessary item for laravel",
   "type": "library",
   "homepage": "https://github.com/RezaParsian/Guzzle",
@@ -16,10 +16,7 @@
   "autoload": {
     "psr-4": {
       "Rp76\\LaravelPack\\": "src/"
-    },
-    "files": [
-      "src/functions.php"
-    ]
+    }
   },
   "authors": [
     {
