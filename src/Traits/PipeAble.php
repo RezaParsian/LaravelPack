@@ -8,7 +8,7 @@ use Illuminate\Pipeline\Pipeline;
 
 trait PipeAble
 {
-    public static function scopePipe(Builder $builder, array $pipes)
+    public static function scopeLead(Builder $builder, array $pipes)
     {
         return app(Pipeline::class)
             ->send($builder)
