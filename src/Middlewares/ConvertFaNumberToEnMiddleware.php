@@ -23,10 +23,19 @@ class ConvertFaNumberToEnMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $data = array_map(fn($item) => $this->convertPersianNumberToEnglish->handle($item), $request->all());
-
+        $data = $this->recursivelyConvertNumbers($request->all());
         $request->merge($data);
 
         return $next($request);
+    }
+
+    protected function recursivelyConvertNumbers(array $items)
+    {
+        return array_map(function ($item) {
+            if (is_array($item))
+                return $this->recursivelyConvertNumbers($item);
+
+            return $this->convertPersianNumberToEnglish->handle($item);
+        }, $items);
     }
 }
