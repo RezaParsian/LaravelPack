@@ -35,6 +35,9 @@ class ConvertFaNumberToEnMiddleware
             if (is_array($item))
                 return $this->recursivelyConvertNumbers($item);
 
+            if (is_numeric($item) or is_bool($item))
+                return $item;
+
             return $this->convertPersianNumberToEnglish->handle($item);
         }, $items);
     }
